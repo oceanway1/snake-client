@@ -10,10 +10,18 @@ const connect = function () {
   });
   conn.setEncoding('utf8');
   conn.on('connect', () => {
-    console.log('connect');
+
     conn.write("successfully connect on the server");
     conn.write('Name: LN');
-    
+
+  });
+    conn.on('connect', () => {
+      setTimeout(function() {
+    conn.write("Move: up"); }, 2000);
+
+    // conn.write("Move: down");
+    // conn.write("Move: left");
+    // conn.write("Move: right");
 
   });
   // interpret incoming data as text
